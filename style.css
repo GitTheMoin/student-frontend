@@ -1,0 +1,28 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6f8; color: #222; }
+header { background: #1f3a5f; color: #fff; padding: 16px 24px; }
+header h1 { margin: 0 0 12px; font-size: 1.3rem; }
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+nav button { background: transparent; color: #fff; border: 1px solid #fff5; padding: 8px 14px; border-radius: 6px; cursor: pointer; }
+nav button.active, nav button:hover { background: #fff; color: #1f3a5f; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+section { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px #0002; }
+.hidden { display: none; }
+form { display: grid; gap: 12px; max-width: 420px; }
+label { display: grid; gap: 4px; font-size: .9rem; }
+input { padding: 8px; border: 1px solid #bbb; border-radius: 6px; font-size: 1rem; }
+button { padding: 8px 14px; border: none; border-radius: 6px; background: #1f6feb; color: #fff; cursor: pointer; font-size: .95rem; }
+button.secondary { background: #6b7280; }
+button.danger { background: #d92d20; }
+.actions, .toolbar { display: flex; gap: 8px; }
+.toolbar { margin-bottom: 12px; }
+.toolbar input { flex: 1; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+td .actions { gap: 6px; }
+td button { padding: 4px 10px; font-size: .8rem; }
+.message { padding: 10px 14px; border-radius: 6px; margin-bottom: 12px; }
+.message.success { background: #dcfce7; color: #14532d; }
+.message.error { background: #fee2e2; color: #7f1d1d; }
+.message.info { background: #e0f2fe; color: #0c4a6e; }

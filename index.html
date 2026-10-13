@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Information Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Student Information Management System</h1>
+    <nav>
+      <button data-section="home" class="active">Home</button>
+      <button data-section="add">Add Student</button>
+      <button data-section="list">Student List</button>
+      <button data-section="search">Search Student</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="message" class="message hidden"></div>
+
+    <!-- HOME -->
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>A three-tier cloud application: Netlify (frontend), Render (API), MongoDB Atlas (database).</p>
+      <p>Use the menu above to add, view, search, update or delete student records.</p>
+    </section>
+
+    <!-- ADD / EDIT -->
+    <section id="add" class="hidden">
+      <h2 id="form-title">Add Student</h2>
+      <form id="student-form" novalidate>
+        <label>Student ID *<input id="studentId" required placeholder="ST101" /></label>
+        <label>Name *<input id="name" required /></label>
+        <label>Email<input id="email" type="email" /></label>
+        <label>Department *<input id="department" required /></label>
+        <label>Semester (1-8) *<input id="semester" type="number" min="1" max="8" required /></label>
+        <label>Contact (10 digits)<input id="contact" maxlength="10" /></label>
+        <div class="actions">
+          <button type="submit" id="submit-btn">Add Student</button>
+          <button type="button" id="cancel-btn" class="secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- LIST -->
+    <section id="list" class="hidden">
+      <h2>Student List</h2>
+      <div class="toolbar">
+        <input id="filter" placeholder="Filter by name or ID" />
+        <button id="refresh-btn" class="secondary">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Email</th><th>Department</th>
+              <th>Sem</th><th>Contact</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="student-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section id="search" class="hidden">
+      <h2>Search Student</h2>
+      <div class="toolbar">
+        <input id="search-id" placeholder="Enter Student ID, e.g. ST101" />
+        <button id="search-btn">Search</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Email</th><th>Department</th>
+              <th>Sem</th><th>Contact</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="search-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
